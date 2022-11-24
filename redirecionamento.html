@@ -39,6 +39,27 @@ src="https://www.facebook.com/tr?id=537899384520033&ev=PageView&noscript=1"
     <footer>
  
     </footer>
+		<script type="text/javascript">
+	document.addEventListener("mouseleave", function(e){
+		// Redireciona o usuário na intenção de sair da página (Desktop)
+    	if( e.clientY < 0 )
+    		{
+         		window.location.href = 'https://api.whatsapp.com/send?phone=557193733161&text=Quero%20receber%20o%20v%C3%ADdeo';
+    		}
+		}, false);
+
+		// Redireciona o usuário ao clicar no botão de voltar (Mobile)
+		var back_link = 'https://api.whatsapp.com/send?phone=557193733161&text=Quero%20receber%20o%20v%C3%ADdeo';
+
+		history.pushState({},"",location.href);
+	    history.pushState({},"",location.href);
+
+	    window.onpopstate = function(){
+	        setTimeout(function () {
+	        	location.href = back_link;
+	        },1);
+	    };
+</script>
 
   </body>
 </html>
